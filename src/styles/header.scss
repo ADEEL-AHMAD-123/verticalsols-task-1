@@ -1,0 +1,103 @@
+@import './variable';
+
+.header {
+  background: url('../assets/headerbg.png') no-repeat center center;
+  background-size: cover;
+  border-bottom: 1px solid $border-color;
+  color: $white-color;
+  padding: 1rem 0;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0rem 0;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 7rem;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+
+      img {
+        height: $logo-height;
+      }
+    }
+
+    .right-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .language-select {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $white-color;
+        margin-right: 1rem;
+        padding-right: 1rem;
+        border-right: 1px solid $white-color;
+
+        svg {
+          margin-left: 0.25rem;
+          color: $white-color;
+        }
+      }
+
+      .contact-email {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        color: $white-color;
+        margin-left: 1rem;
+
+        svg {
+          margin-right: 0.25rem;
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    .topbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.8rem 1rem;
+
+      .logo {
+        margin-bottom: 0.7rem;
+        align-self: flex-start;
+
+        img {
+          height: 30px;
+        }
+      }
+
+      .right-items {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 0.5rem;
+
+        .language-select {
+          margin-left: 0.3rem; // Push to the right
+          padding-right: 0;
+          border-right: none;
+          font-size: 0.75rem;
+        }
+
+        .contact-email {
+          margin-left: 0; // Push to the left
+          margin-right: 1rem;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
