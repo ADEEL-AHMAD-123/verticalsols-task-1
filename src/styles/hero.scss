@@ -1,0 +1,79 @@
+@import './variable'; 
+
+.hero {
+  padding: $section-padding-lg; 
+  background-color: $blue-color; 
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      .hero-box {
+        flex: 1;
+        margin: 0 0.5rem;
+        padding: 1rem;
+        background-color: red; // Random background color
+        border-radius: 0.5rem;
+        min-height: 200px; // Height of the top boxes
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .hero-left {
+        background-color: green; // Different background color for differentiation
+      }
+
+      .hero-right {
+        background-color: blue; // Different background color for differentiation
+      }
+    }
+
+    .hero-bottom {
+      width: 100%;
+
+      .hero-bottom-box {
+        width: 100%;
+        padding: 1rem;
+        background-color: yellow; // Random background color
+        border-radius: 0.5rem;
+        min-height: 100px; 
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $section-padding-sm;
+
+    .hero-inner {
+      .hero-top {
+        flex-direction: column;
+
+        .hero-box {
+          margin: 0.5rem 0;
+        }
+      }
+
+      .hero-bottom {
+        .hero-bottom-box {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}
